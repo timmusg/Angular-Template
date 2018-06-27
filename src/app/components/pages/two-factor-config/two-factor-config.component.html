@@ -1,0 +1,25 @@
+<mat-card class="two-factor-config-card">
+  <h2>Two Factor Authentication Configuration</h2>
+  <img [src]="qrcode" alt="Two Factor Auth QR Code" />
+  <h3>After scanning this QR code through a supported application please enter the code provided by the application</h3>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="two-factor-form">
+    <div>
+      <mat-form-field class="container">
+        <input
+          matInput
+          placeholder="Code"
+          type="text"
+          id="code"
+          class="form-control"
+          formControlName="code">
+      </mat-form-field>
+    </div>
+    <button
+      mat-raised-button
+      type="submit"
+      class="two-factor-button"
+      [disabled]="!myForm.valid">Submit</button>
+  </form>
+  <h3 *ngIf="wrongCode">The code you entered is incorrect</h3>
+  <h3>Supported Applications: <a href="https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile" target="_blank">Duo</a>, <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en" target="_blank">Google Authenticator</a></h3>
+</mat-card>

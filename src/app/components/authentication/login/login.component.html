@@ -1,0 +1,49 @@
+<mat-card class="login-card" *ngIf="!isLoggedIn() &amp;&amp; !twoFactor">
+  <div class="login" layout="column" layout-align="center center">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div>
+        <mat-form-field class="container">
+          <input
+            matInput
+            placeholder="Email"
+            type="text"
+            id="email"
+            class="form-control"
+            formControlName="email">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="container">
+          <input
+            matInput
+            placeholder="Password"
+            type="password"
+            id="password"
+            class="form-control"
+            formControlName="password">
+        </mat-form-field>
+        <div class="forgot-password-link">
+          <a class="link" routerLink="/forgot-password">Forgot Password?</a>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        type="submit"
+        class="login-button"
+        [disabled]="!myForm.valid">Login</button>
+    </form>
+    <div class="signup-link">
+      <a class="link" routerLink="/signup">Sign Up</a>
+    </div>
+    <button
+      mat-raised-button
+      (click)="loginGoogle()"
+      class="google-login-button">Login with Google</button>
+  </div>
+</mat-card>
+<mat-card class="two-factor-card" *ngIf="!isLoggedIn() &amp;&amp; twoFactor">
+  <app-two-factor
+  [email]="email"
+  [password]="password">
+  </app-two-factor>
+</mat-card>

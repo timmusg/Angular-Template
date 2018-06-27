@@ -1,0 +1,46 @@
+<mat-sidenav-container *ngIf="isLoggedIn()" class="sidenav-container" [@slideInOut]="menuState">
+  <mat-sidenav-content>
+    <div class="link-wrapper">
+      <h2
+      [ngClass]="(router.url=='/')?'active-link':''"
+      routerLinkActive="active" *ngIf="isLoggedIn()"
+      [routerLink]="['/search-by-company', companyName]" (click)="closeSidenav()">
+        <span
+          [ngClass]="(router.url=='/')?'active-border':'inactive-border'">
+        </span>Locations
+      </h2>
+      <h2
+        [ngClass]="(router.url=='/accounts')?'active-link':''"
+        routerLinkActive="active" *ngIf="isLoggedIn()"
+        [routerLink]="['enterprise']" (click)="closeSidenav()">
+          <span
+            [ngClass]="(router.url=='/enterprise')?'active-border':'inactive-border'">
+          </span>Enterprise
+      </h2>
+      <h2
+        [ngClass]="(router.url=='/account-locations-map')?'active-link':''"
+        routerLinkActive="active" *ngIf="isLoggedIn()"
+        [routerLink]="['favorites']" (click)="closeSidenav()">
+        <span
+          [ngClass]="(router.url=='/favorites')?'active-border':'inactive-border'">
+        </span>My Accounts
+      </h2>
+      <h2
+        [ngClass]="(router.url=='/settings')?'active-link':''"
+        routerLinkActive="active" *ngIf="isLoggedIn()"
+        [routerLink]="['settings']" (click)="closeSidenav()">
+        <span
+        [ngClass]="(router.url=='/settings')?'active-border':'inactive-border'">
+        </span>Settings
+      </h2>
+
+      <h2 routerLinkActive="active" *ngIf="isLoggedIn()" (click)="onLogout()">Logout</h2>
+    </div>
+    <div class="user-details">
+      <p>{{username}} {{lastname}}</p>
+      <p>{{userEmail}}</p>
+      <img *ngIf="logo" class="logo" src={{logo}}>
+      <p [routerLink]="['/my-company-settings']" class="change-company-link">Change Company?</p>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

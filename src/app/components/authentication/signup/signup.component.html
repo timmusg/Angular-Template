@@ -1,0 +1,119 @@
+<mat-card *ngIf="!formSubmitted" class="signup" layout="column" layout-align="center center">
+  <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+    <div>
+      <mat-input-container class="container">
+        <input
+          matInput
+          mat-maxlength="200"
+          placeholder="First Name"
+          type="text"
+          id="firstName"
+          class="form-control"
+          formControlName="firstName"
+        >
+        <mat-error *ngIf="signupForm.get('firstName').errors &amp;&amp; signupForm.get('firstName').errors.required">
+            First name is required
+        </mat-error>
+      </mat-input-container>
+    </div>
+    <div>
+      <mat-input-container class="container">
+        <input
+          matInput
+          placeholder="Last Name"
+          type="text"
+          id="lastName"
+          class="form-control"
+          formControlName="lastName"
+        >
+        <mat-error *ngIf="signupForm.get('lastName').errors &amp;&amp; signupForm.get('lastName').errors.required">
+          Last name is required
+        </mat-error>
+      </mat-input-container>
+    </div>
+    <div>
+      <mat-input-container class="container">
+        <input
+          matInput
+          placeholder="Email"
+          type="text"
+          id="email"
+          class="form-control"
+          formControlName="email"
+        >
+        <mat-error *ngIf="signupForm.get('email').errors &amp;&amp; signupForm.get('email').errors.required">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="signupForm.get('email').errors &amp;&amp; signupForm.get('email').errors.pattern">
+          Not a valid email
+        </mat-error>
+      </mat-input-container>
+    </div>
+    <div>
+      <mat-input-container class="container">
+        <input
+          matInput
+          placeholder="Password"
+          type="password"
+          id="password"
+          class="form-control"
+          formControlName="password"
+        >
+        <mat-error *ngIf="signupForm.get('password').errors &amp;&amp; signupForm.get('password').errors.required">
+          Password is required
+        </mat-error>
+        <!-- <mat-error *ngIf="signupForm.get('password').errors &amp;&amp; signupForm.get('password').errors.pattern">
+          Must be at least 8 character sand contain one uppercase character, one lowercase character, one digit and one special character
+        </mat-error> -->
+      </mat-input-container>
+    </div>
+    <div>
+      <mat-input-container class="container">
+        <input
+          matInput
+          placeholder="Confirm Password"
+          type="password"
+          id="confirmPassword"
+          class="form-control"
+          formControlName="confirmPassword"
+        >
+        <mat-error *ngIf="signupForm.get('confirmPassword').errors &amp;&amp; signupForm.get('confirmPassword').errors.MatchPassword">
+          Must match password
+        </mat-error>
+      </mat-input-container>
+    </div>
+    <!-- For Apps that need Connected World Buildings Access
+    <h4 class="signup-description">Please signup using your Connected World username and password.</h4> -->
+    <h4 class="signup-description">If you already have created a AngularTemplate Account, enter your same credentials here in order to gain access to this application.</h4>
+    <h5>Password should have at least:</h5>
+    <h6>
+      <ul>
+        <li>Eight characters</li>
+        <li>One upper case character</li>
+        <li>One lower case character</li>
+        <li>One digit</li>
+        <li>One special character</li>
+      </ul>
+    </h6>
+    <div class="button">
+      <button
+        mat-raised-button
+        type="submit"
+        [disabled]="!signupForm.valid"
+      >Submit</button>
+    </div>
+    <div class="back-to-login-link">
+      <a class="link" routerLink="/">Back to Login</a>
+    </div>
+  </form>
+</mat-card>
+
+<mat-card *ngIf="formSubmitted" class="submitted-message">
+  <h3>Thank you for creating a C2F Account! You have been successfully signed up for Angular Template access.  An administator will need to verify your credentials before you can login. You will receive an email once you have been verified.</h3>
+  <div class="button">
+    <button
+      mat-raised-button
+      routerLink="/">Back to Login
+    </button>
+  </div>
+</mat-card>

@@ -1,0 +1,9 @@
+{
+  "client_id": "test",
+  "libraries": [],
+  "scopes": [
+    "profile",
+    "email",
+    "openid"
+  ]
+}

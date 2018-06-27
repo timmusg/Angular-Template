@@ -1,0 +1,23 @@
+<span class="username">{{userName}}</span>
+<mat-icon [matMenuTriggerFor]="menu"
+*ngIf="isLoggedIn()" class="md-24 menu-icon">
+   more_vert
+</mat-icon>
+
+<mat-menu #menu="matMenu">
+  <button
+    mat-menu-item
+    routerLinkActive="active"
+    *ngIf="isLoggedIn()"
+    [routerLink]="['settings']">
+    <span>Settings</span>
+  </button>
+  <button
+    mat-menu-item
+    routerLinkActive="active"
+    *ngIf="isLoggedIn()"
+    (click)="onLogout()"
+  >
+    <span>Logout</span>
+  </button>
+</mat-menu>

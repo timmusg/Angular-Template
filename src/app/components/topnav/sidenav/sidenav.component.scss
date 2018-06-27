@@ -1,0 +1,67 @@
+.sidenav-container {
+  z-index: 10;
+  width: 200px;
+  left: -200px;
+  height: 100vh;
+  opacity: 1;
+  position: fixed;
+  background-color: #005eb8;
+  color: white;
+  top: 64px;
+
+  mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .link-wrapper{
+      margin-top: 20px;
+
+      h2 {
+        margin: 0 0 5px 35px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: normal;
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+
+        &.active-link {
+          margin-left: 17px;
+        }
+
+        span.active-border {
+          border-left: 3px solid #005EB8;
+          padding-right: 15px;
+        }
+
+        span.inactive-border {
+          display: none;
+        }
+      }
+    }
+
+    .user-details {
+      padding: 0.5rem;
+      color: white;
+      font-size: 0.6rem;
+      position: absolute;
+      bottom: 4rem;
+    }
+
+  }
+}
+
+.logo {
+  width: auto;
+  height: 2rem;
+  padding-right: 10px;
+}
+
+.change-company-link {
+  &:hover {
+    cursor: pointer;
+  }
+}

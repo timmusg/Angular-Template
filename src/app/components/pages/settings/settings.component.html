@@ -1,0 +1,29 @@
+<mat-card class="settings">
+  <mat-list dense class="scroll">
+    <h2>Security</h2>
+    <mat-list-item class="list-item">
+      <p class="settings-item">Two Factor Authentication</p>
+      <div class="slide-toggle">
+        <mat-slide-toggle
+        [checked]="settings.two_factor_auth == '0' ? false : true"
+        (change)="toggleTwoFactorAuth($event)"
+        ></mat-slide-toggle>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <div class="exit-button">
+      <button
+        *ngIf="company"
+        mat-raised-button
+        class="settings-button"
+        [routerLink]="['/search-by-company', company]"
+        >Exit Settings</button>
+      <button
+        *ngIf="!company"
+        mat-raised-button
+        class="settings-button settings-exit"
+        [routerLink]="['/']"
+        >Exit Settings</button>
+    </div>
+  </mat-list>
+</mat-card>

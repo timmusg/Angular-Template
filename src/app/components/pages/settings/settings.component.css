@@ -1,0 +1,42 @@
+.settings {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: 1rem;
+}
+
+.settings-item {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.slide-toggle {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  margin-right: 5vw;
+}
+
+.settings-description {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.list-item {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.settings-button {
+  margin-left: 1rem;
+}
+
+.buttons {
+  padding-top: 1rem;
+}
+
+.exit-button {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}

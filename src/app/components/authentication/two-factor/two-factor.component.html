@@ -1,0 +1,23 @@
+<div class="two-factor" layout="column" layout-align="center center">
+  <h2>Two Factor Authentication</h2>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="two-factor-form">
+    <div>
+      <mat-form-field class="container">
+        <input
+          matInput
+          placeholder="Code"
+          type="text"
+          id="code"
+          class="form-control"
+          formControlName="code">
+      </mat-form-field>
+    </div>
+    <button
+      mat-raised-button
+      type="submit"
+      class="two-factor-button"
+      [disabled]="!myForm.valid">Submit</button>
+  </form>
+  <h3 *ngIf="!wrongCode">Enter the code that was just sent to the two factor authentication app you configured</h3>
+  <h3 *ngIf="wrongCode">The code you have entered is incorrect</h3>
+</div>

@@ -1,0 +1,14 @@
+@media only screen and (max-width : 600px) {
+    .username {
+      display: none;
+    }
+}
+
+.username {
+  font-size: 14px;
+}
+
+.menu-icon {
+  margin-left: 5px;
+  cursor: pointer;
+}

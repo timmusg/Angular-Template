@@ -1,0 +1,98 @@
+.topnav {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.topnav-left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  cursor: pointer;
+
+  .logo {
+    width: 90px;
+    display: inline;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .apptitle {
+    margin-left: 40px;
+    font-size: 22px;
+    color: white;
+    display: inline;
+    @media only screen and (max-width : 600px) {
+      display: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.filler {
+  flex: 1 1 auto;
+}
+
+.topnav-right {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  :host {
+      width: 100vw;
+      position: relative;
+  }
+
+  .authButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media only screen and (max-width : 400px) {
+      margin-right: 0;
+    }
+  }
+
+  .authentication-icon {
+    color: white;
+    margin-left: 10px;
+  }
+
+  .topnav-features {}
+}
+
+a {
+  color:inherit;
+  text-decoration: none;
+ }
+
+mat-toolbar {
+  background-color: #005eb8;
+  position: relative;
+  height: 64px;
+}
+
+app-search, .authentication-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav-menu {
+  color: white;
+  margin-right: 1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.back-arrow {
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

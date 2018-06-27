@@ -1,0 +1,20 @@
+<mat-toolbar class="topnav">
+  <mat-icon class="nav-menu" *ngIf="isLoggedIn() &amp;&amp; !sidenavVisible &amp;&amp; !subroute">menu</mat-icon>
+  <mat-icon class="nav-menu" *ngIf="isLoggedIn() &amp;&amp; sidenavVisible &amp;&amp; !subroute">close</mat-icon>
+  <mat-icon class="back-arrow" *ngIf="isLoggedIn() &amp;&amp; subroute" (click)="changeRouteType()">arrow_back</mat-icon>
+  <app-sidenav [sidenavVisible]="sidenavVisible" (getSidenavVisibleChange)="toggledFromSidenav($event)"></app-sidenav>
+
+  <div class="topnav-left">
+    <img class="logo" src="./assets/angulartemplate.svg" alt="Angular Template Logo" routerLinkActive="active" [routerLink]="['/']">
+    <h1 class="apptitle" routerLinkActive="active" [routerLink]="['/']">Angular Template</h1>
+  </div>
+
+  <div class="filler"></div>
+
+  <div class="topnav-right" *ngIf="!subroute">
+    <app-search></app-search>
+    <!-- <div class="authentication-icon">
+      <app-authentication class="authButton"></app-authentication>
+    </div> -->
+  </div>
+</mat-toolbar>

@@ -1,0 +1,41 @@
+.signup {
+  padding: 3.5em 1.5em 1.5em 4em;
+  display: flex;
+  justify-content: center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.button {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 300px;
+}
+
+.submitted-message {
+  padding: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.back-to-login-link {
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+.link {
+  font-style: italic;
+  color: gray;
+  font-size: smaller;
+}
+
+.signup-description {
+  width: 300px;
+}
